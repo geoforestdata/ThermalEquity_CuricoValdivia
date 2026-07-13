@@ -18,6 +18,8 @@ Two cities with different baseline climates are compared, which raises a design 
 
 ## Methodology
 
+![Six-step pipeline: city boundary, satellite bands, H3 grid, Cooling Index, population, equity score](figures/slide_pipeline.png)
+
 **Spatial unit:** H3 hexagonal grid, resolution 9 (~174 m edge, locally ~0.088–0.092 km² per cell — H3 is not strictly equal-area, and cell area varies with latitude).
 
 **City extent:** GHSL Urban Centre Database (R2024A), fixed built-up boundary, epoch 2025. Cities are selected by point-in-polygon containment against a known city-center coordinate, not by matching a name field (avoids encoding/naming-convention issues across dataset releases).
@@ -104,6 +106,8 @@ The pipeline is parameterized by two things per city: a center-point coordinate 
 5. **Everything else — H3 generation, NDVI/LST extraction, zonal aggregation, z-scoring, quartile equity metric — is city-agnostic** and runs unchanged.
 
 ## Limitations
+
+![What this doesn't say: not a temperature comparison between cities, population is a model not a headcount, 2026 is a projection, a proxy for exposure not a health outcome](figures/slide_04_caveats.png)
 
 - **WorldPop 2026 is a model projection**, not a census measurement — it interpolates/extrapolates from circa-2010/2020 census rounds, adjusted to UN World Population Prospects 2024 estimates. 2016 sits within the census-supported range; 2026 does not carry the same certainty despite the output format looking identical.
 - **Population source is a community-maintained GEE catalog** (`sat-io`, curated by Samapriya Roy), not Google's official WorldPop ingestion, which has no post-2021 epoch.
