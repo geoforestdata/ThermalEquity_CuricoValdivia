@@ -34,7 +34,7 @@ NDVI and Land Surface Temperature (Landsat 8/9, Collection 2 Level 2, `ST_B10`, 
 
 **Equity metric:** hexagons are split into quartiles of Cooling Index within each city-year. The metric reported is the percentage of that city-year's population living in quartile 1 — the worst 25% of hexagons. By construction, an even population distribution across thermal conditions would put ~25% of the population in that quartile; deviation above 25% indicates concentration in thermally disadvantaged areas.
 
-Full method-level decisions and how city candidates are validated before committing to them are logged in [`docs/DEVLOG.md`](docs/DEVLOG.md).
+Full method-level decisions — city validation criteria, how the equity metric was defined, what was tested before settling on the final approach — are summarized throughout this README and in the notebook's markdown cells.
 
 ## Data
 
