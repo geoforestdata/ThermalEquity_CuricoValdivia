@@ -1,5 +1,7 @@
 # Thermal Refuge Equity — Curico & Valdivia
 
+**[→ Explore the interactive map](https://geoforestdata.github.io/ThermalEquity_CuricoValdivia/)**
+
 Who lives in the parts of a city with the least relative access to thermal relief — and is that changing over time?
 
 This project builds a hexagon-level **Cooling Index** from open satellite data and cross-references it with modeled population to measure thermal equity in two Chilean cities, Curico and Valdivia, comparing 2016 against 2026.
@@ -44,8 +46,8 @@ Full method-level decisions and how city candidates are validated before committ
 ## Installation
 
 ```bash
-git clone <repo-url>
-cd CoolRefugeEquity_CuricoValdivia
+git clone https://github.com/geoforestdata/ThermalEquity_CuricoValdivia.git
+cd ThermalEquity_CuricoValdivia
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -110,6 +112,26 @@ The pipeline is parameterized by two things per city: a center-point coordinate 
 - Extend to cities with complex terrain (river deltas, hill-heavy topography) using an alternative thermal source with different failure modes than Landsat ST — MODIS LST (daily revisit, coarser resolution) or ECOSTRESS.
 - Extend the equity metric with an income or deprivation covariate to test whether thermal disadvantage correlates with socioeconomic disadvantage, rather than only reporting the spatial/demographic pattern on its own.
 - Sensitivity check on quartile-based equity metric against tercile or quintile cuts, to confirm the finding isn't an artifact of the specific 25% threshold.
+
+## Citation
+
+If you use this repository, workflow, or derived products in academic work, please cite:
+
+> Vega-Escobar, A. (2026). *Thermal Refuge Equity Mapping for Curico and Valdivia using Google Earth Engine* (Version 1.0.0). GitHub. https://github.com/geoforestdata/ThermalEquity_CuricoValdivia
+
+## Data and Software Attribution
+
+This project uses the following open data and software:
+
+- Google Earth Engine
+- USGS Landsat 8/9 Collection 2 Level 2
+- GHSL Urban Centre Database R2024A (JRC, European Commission)
+- WorldPop population estimates (`sat-io` community catalog, curated by Samapriya Roy)
+- CartoDB basemaps (Positron / Voyager)
+- Uber H3 (hexagonal hierarchical spatial index)
+- Python ecosystem: Earth Engine API, geemap, GeoPandas, Rasterio, rasterstats, Folium, Matplotlib
+
+Please cite these data sources according to their respective licenses and citation guidelines when appropriate.
 
 ## License
 
