@@ -8,6 +8,8 @@ This project builds a hexagon-level **Cooling Index** from open satellite data a
 
 **This is a worked example, not a two-city-only tool.** The method — H3 grid, NDVI/LST from Landsat, population from WorldPop, all standardized within-city — only needs a city's built-up boundary and a bounding box to run anywhere Landsat and WorldPop have coverage. Curico and Valdivia were chosen to demonstrate the method end-to-end with a real, interpretable contrast; see [Applying this to another city](#applying-this-to-another-city) for what to change and what to check before trusting the output elsewhere.
 
+![Cooling Index map for Curico and Valdivia, showing hexagon-level relative heat exposure](figures/map_preview.png)
+
 ## Problem
 
 Urban heat exposure is not evenly distributed within a city. Vegetation cover and surface temperature vary block by block, and population is not spread evenly across that variation. Standard urban heat island studies often stop at mapping temperature; this project asks a narrower, more actionable question: **what share of a city's population lives in the quarter of the city with the worst relative cooling conditions, and is that share growing or shrinking?**
@@ -75,6 +77,8 @@ Outputs are not versioned (`outputs/` is gitignored) — they're fully reproduci
 |---|---|---|---|
 | Curico | 26.2% | 28.2% | +1.9 |
 | Valdivia | 42.4% | 42.0% | −0.5 |
+
+![Share of population living in the worst-off thermal quarter, Curico vs Valdivia](figures/slide_05_equity.png)
 
 Curico sits close to the 25% baseline expected under an even distribution, drifting slightly upward. Valdivia holds close to double that share, stable across the decade — visually confirmed against satellite imagery as a contiguous cluster over the dense urban core, not a statistical artifact driven by a handful of high-population hexagons.
 
